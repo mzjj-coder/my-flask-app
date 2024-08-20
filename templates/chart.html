@@ -1,0 +1,304 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>创造营2021弹幕分析</title>
+	<script src="../static/assets/js/echarts.min.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="../static/assets/materialize/css/materialize.min.css" media="screen,projection" />
+    <!-- Bootstrap Styles-->
+    <link href="../static/assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FontAwesome Styles-->
+    <link href="../static/assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- Morris Chart Styles-->
+    <link href="../static/assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <!-- Custom Styles-->
+    <link href="../static/assets/css/custom-styles.css" rel="stylesheet" />
+    <!-- Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="../static/assets/js/Lightweight-Chart/cssCharts.css"> 
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand waves-effect waves-dark" href="index.html"><i class="large material-icons">track_changes</i> <strong>首页</strong></a>
+
+		<div id="sideNav" class="waves-effect waves-dark" href=""><i class="material-icons dp48">toc</i></div>
+            </div>
+
+
+        </nav>
+		<!-- Dropdown Structure -->
+	   <!--/. NAV TOP  -->
+        <!--/. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+
+                    <li>
+                        <a href="index.html" class="waves-effect waves-dark"><i class="fa fa-dashboard"></i> 总览</a>
+                    </li>
+{#                    <li>#}
+{#                        <a href="ui-elements.html" class="waves-effect waves-dark"><i class="fa fa-desktop"></i> UI Elements</a>#}
+{#                    </li>#}
+					<li>
+                        <a href="chart.html" class="active-menu waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> 动态图表</a>
+                    </li>
+{#                    <li>#}
+{#                        <a href="tab-panel.html" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Tabs & Panels</a>#}
+{#                    </li>#}
+
+                    <li>
+                        <a href="table.html" class="waves-effect waves-dark"><i class="fa fa-table"></i> 查询</a>
+                    </li>
+
+
+                    <li>
+{#                        <a href="#" class="waves-effect waves-dark"><i class="fa fa-sitemap"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>#}
+{#                        <ul class="nav nav-second-level">#}
+{#                            <li>#}
+{#                                <a href="#">Second Level Link</a>#}
+{#                            </li>#}
+{#                            <li>#}
+{#                                <a href="#">Second Level Link</a>#}
+{#                            </li>#}
+{#                            <li>#}
+{#                                <a href="#" class="waves-effect waves-dark">Second Level Link<span class="fa arrow"></span></a>#}
+{#                                <ul class="nav nav-third-level">#}
+{#                                    <li>#}
+{#                                        <a href="#">Third Level Link</a>#}
+{#                                    </li>#}
+{#                                    <li>#}
+{#                                        <a href="#">Third Level Link</a>#}
+{#                                    </li>#}
+{#                                    <li>#}
+{#                                        <a href="#">Third Level Link</a>#}
+{#                                    </li>#}
+{##}
+{#                                </ul>#}
+{##}
+{#                            </li>#}
+{#                        </ul>#}
+{#                    </li>#}
+{#                    <li>#}
+                        <a href="empty.html" class="waves-effect waves-dark"><i class="fa fa-fw fa-file"></i> 词云</a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+		  <div class="header">
+                        <h1 class="page-header">
+                             动态图表
+                        </h1>
+						<ol class="breadcrumb">
+					  <li><a href="index.html">首页</a></li>
+					  <li><a href="chart.html">动态图表</a></li>
+					</ol>
+
+		</div>
+        <div id="main1" style="width: 100%;height:400px;"></div>
+        <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('main1'));
+        option = {
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            backgroundColor:'rgb(255, 255, 255)',
+            title:{
+                text:'弹幕随期数分布'},
+            color:['#3398DB'],
+            tooltip:{
+                trigger:'axis',
+                axisPointer:{
+                    type:'shadow'
+                }
+            },
+                xAxis: {
+                    type: 'category',
+                    data: ["第一期上", "第一期下", "第二期", "第三期上", "第三期下", "第四期上", "第四期下", "第五期", "第六期上", "第六期下", "第七期", "第八期", "第九期", "第十期"]
+                        },
+                yAxis: {
+                    type: 'value'
+                        },
+                series: [{
+                    data: [69662, 52452, 63046, 76165, 67800, 32407, 32309, 55481, 53447, 52562, 64507, 40862, 55052, 45196],
+                    type: 'line'
+                        }]
+            };
+
+        option && myChart.setOption(option);
+        </script>
+<div id="container" style="width: 100%;height:400px;"></div>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-nightly@5.1.2-dev.20210512/dist/echarts.min.js"></script>
+<script type="text/javascript" >
+var dom = document.getElementById("container");
+var myChart1 = echarts.init(dom);
+var app = {};
+
+var option;
+
+
+
+var dataAxis = ['刘宇', '米卡', '赞多', '庆怜', '周柯宇', '力丸', '林墨', '尹浩宇', '奥斯卡', '伯远', '甘望星'];
+var data = [35912, 28477, 24886, 17962, 17921, 16186, 14764, 12586, 12443, 11791, 10043];
+var yMax = 40000;
+var dataShadow = [];
+
+for (var i = 0; i < data.length; i++) {
+    dataShadow.push(yMax);
+}
+
+option = {
+    title: {
+        text: '人物提及次数',
+    },
+    backgroundColor:'rgb(255, 255, 255)',
+    tooltip:{
+                trigger:'axis',
+                axisPointer:{
+                    type:'shadow'
+                }
+            },
+    grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+    xAxis: {
+        data: dataAxis,
+        axisLabel: {
+            inside: true,
+            textStyle: {
+                color: '#fff'
+            }
+        },
+        axisTick: {
+            show: false
+        },
+        axisLine: {
+            show: false
+        },
+        z: 10
+    },
+    yAxis: {
+        axisLine: {
+            show: false
+        },
+        axisTick: {
+            show: false
+        },
+        axisLabel: {
+            textStyle: {
+                color: '#999'
+            }
+        }
+    },
+    dataZoom: [
+        {
+            type: 'inside'
+        }
+    ],
+    series: [
+        {
+            type: 'bar',
+            showBackground: true,
+            itemStyle: {
+                color: new echarts.graphic.LinearGradient(
+                    0, 0, 0, 1,
+                    [
+                        {offset: 0, color: '#83bff6'},
+                        {offset: 0.5, color: '#188df0'},
+                        {offset: 1, color: '#188df0'}
+                    ]
+                )
+            },
+            emphasis: {
+                itemStyle: {
+                    color: new echarts.graphic.LinearGradient(
+                        0, 0, 0, 1,
+                        [
+                            {offset: 0, color: '#2378f7'},
+                            {offset: 0.7, color: '#2378f7'},
+                            {offset: 1, color: '#83bff6'}
+                        ]
+                    )
+                }
+            },
+            data: data
+        }
+    ]
+};
+
+// Enable data zoom when user click bar.
+var zoomSize = 6;
+myChart1.on('click', function (params) {
+    console.log(dataAxis[Math.max(params.dataIndex - zoomSize / 2, 0)]);
+    myChart1.dispatchAction({
+        type: 'dataZoom',
+        startValue: dataAxis[Math.max(params.dataIndex - zoomSize / 2, 0)],
+        endValue: dataAxis[Math.min(params.dataIndex + zoomSize / 2, data.length - 1)]
+    });
+});
+
+if (option && typeof option === 'object') {
+    myChart1.setOption(option);
+}
+
+</script>
+<div class="flourish-embed flourish-bar-chart-race" data-src="visualisation/18791024"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/18791024/thumbnail" width="100%" alt="bar-chart-race visualization" /></noscript></div>
+<div class="flourish-embed flourish-chart" data-src="visualisation/19098077"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/19098077/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
+
+
+
+                 <!-- /. ROW  -->
+				</div>
+             <!-- /. PAGE INNER  -->
+            </div>
+         <!-- /. PAGE WRAPPER  -->
+        </div>
+     <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    <!-- jQuery Js -->
+{#    <script src="../static/assets/js/jquery-1.10.2.js"></script>#}
+{##}
+{#	<!-- Bootstrap Js -->#}
+{#    <script src="../static/assets/js/bootstrap.min.js"></script>#}
+{##}
+{#	<script src="../static/assets/materialize/js/materialize.min.js"></script>#}
+{##}
+{#    <!-- Metis Menu Js -->#}
+{#    <script src="../static/assets/js/jquery.metisMenu.js"></script>#}
+{#    <!-- Morris Chart Js -->#}
+{#    <script src="../static/assets/js/morris/raphael-2.1.0.min.js"></script>#}
+{#    <script src="../static/assets/js/morris/morris.js"></script>#}
+{##}
+{##}
+{#	<script src="../static/assets/js/easypiechart.js"></script>#}
+{#	<script src="../static/assets/js/easypiechart-data.js"></script>#}
+{##}
+{#	 <script src="../static/assets/js/Lightweight-Chart/jquery.chart.js"></script>#}
+{##}
+{#    <!-- Custom Js -->#}
+{#    <script src="../static/assets/js/custom-scripts.js"></script>#}
+
+
+</body>
+
+</html>
